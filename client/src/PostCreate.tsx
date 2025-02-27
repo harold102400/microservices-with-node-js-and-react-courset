@@ -3,13 +3,13 @@ import {useState} from 'react';
 
 const PostCreate = () => {
 
-const [title, setTitle] = useState<string>('');
+const [title, setTitle] = useState<string>("");
 
 const handleSubmit = async (event: React.FormEvent<HTMLFormElement>): Promise<void> => {
     event.preventDefault();
 
-    await axios.post('http://localhost:4000/posts', title);
-    setTitle('');
+    await axios.post('http://localhost:4000/posts', {title});
+    setTitle("");
 }
 
   return (
