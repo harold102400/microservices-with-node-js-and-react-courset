@@ -1,7 +1,7 @@
 import { useState } from "react";
 import axios from "axios";
 
-const CommentCreate = ({ postId }: {postId: string}) => {
+const CommentCreate = ({ postId }:{postId: string}) => {
   const [content, setContent] = useState("");
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
