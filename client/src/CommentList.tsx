@@ -1,28 +1,21 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
+import { Comment } from "../src/types/comments";
 
+const CommentList = ({ comments }:{comments: Comment[] }) => {
+  // const [comments, setComments] = useState<Comment[]>([]);
 
-type Comment = {
-    id: string;
-    content: string;
-}
+  // const fetchData = async () => {
+  //   const res = await axios.get(
+  //     `http://localhost:4001/posts/${postId}/comments`
+  //   );
 
-const CommentList = ({ postId }:{postId: string}) => {
-  const [comments, setComments] = useState<Comment[]>([]);
+  //   setComments(res.data);
+  // };
 
-  const fetchData = async () => {
-    const res = await axios.get(
-      `http://localhost:4001/posts/${postId}/comments`
-    );
+  // useEffect(() => {
+  //   fetchData();
+  // }, []);
 
-    setComments(res.data);
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const renderedComments = comments.map((comment) => {
+  const renderedComments = comments?.map((comment) => {
     return <li key={comment.id}>{comment.content}</li>;
   });
 
