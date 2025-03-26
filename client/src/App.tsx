@@ -1,11 +1,10 @@
-import PostCreate from './PostCreate'
-import PostList from './PostList'
+import PostCreate from './PostCreate';
+import PostList from './PostList';
 
 function App() {
-
   return (
     <>
-      <div className='container'>
+      <div className="container">
         <h1>Create Post</h1>
         <PostCreate />
         <hr />
@@ -13,7 +12,7 @@ function App() {
         <PostList />
       </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;

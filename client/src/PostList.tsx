@@ -1,15 +1,14 @@
-import { useState, useEffect } from "react";
-import {Post} from "./types/post"
-import axios from "axios";
-import CommentCreate from "./CommentCreate";
-import CommentList from "./CommentList";
-
+import { useState, useEffect } from 'react';
+import { Post } from './types/post';
+import axios from 'axios';
+import CommentCreate from './CommentCreate';
+import CommentList from './CommentList';
 
 const PostList = () => {
   const [posts, setPosts] = useState<Post[]>([]);
 
   const fetchPosts = async () => {
-    const res = await axios.get("http://localhost:4002/posts");
+    const res = await axios.get('http://localhost:4002/posts');
     setPosts(res.data);
   };
 
@@ -21,12 +20,12 @@ const PostList = () => {
     return (
       <div
         className="card"
-        style={{ width: "30%", marginBottom: "20px" }}
+        style={{ width: '30%', marginBottom: '20px' }}
         key={post.id}
       >
         <div className="card-body">
           <h3>{post.title}</h3>
-          <CommentList comments={post.comments}/>
+          <CommentList comments={post.comments} />
           <CommentCreate postId={post.id} />
         </div>
       </div>

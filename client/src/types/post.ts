@@ -1,7 +1,7 @@
-import { Comment } from "./comments";
+import { Comment } from './comments';
 
 export type Post = {
-    id: string;
-    title: string;
-    comments: Comment[];
-}
+  id: string;
+  title: string;
+  comments: Comment[];
+};

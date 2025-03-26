@@ -1,4 +1,4 @@
-import { Comment } from "../src/types/comments";
+import { Comment } from '../src/types/comments';
 
 const CommentList = ({ comments }: { comments: Comment[] }) => {
   // const [comments, setComments] = useState<Comment[]>([]);
@@ -16,18 +16,17 @@ const CommentList = ({ comments }: { comments: Comment[] }) => {
   // }, []);
 
   const renderedComments = comments?.map((comment) => {
-
     let content = '';
 
     switch (comment.status) {
       case 'approved':
-        content = comment.content
+        content = comment.content;
         break;
       case 'pending':
-        content = 'This comment is awaiting moderation'
+        content = 'This comment is awaiting moderation';
         break;
       case 'rejected':
-        content = 'This comment has been rejected'
+        content = 'This comment has been rejected';
         break;
       default:
         console.log('Content is empty or unrecognized');

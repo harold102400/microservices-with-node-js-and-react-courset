@@ -1,0 +1,16 @@
+{
+  "extends": [
+    "eslint:recommended", // Reglas recomendadas de ESLint
+    "plugin:prettier/recommended" // Activar el plugin de Prettier para ESLint
+  ],
+  "plugins": [
+    "prettier" // Agregar el plugin Prettier
+  ],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  "rules": {
+    "prettier/prettier": ["error"] // Configura que Prettier se ejecute como error si no se cumple
+  }
+}
